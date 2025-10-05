@@ -1,0 +1,34 @@
+# Backpack BTC 做空网格配置示例
+
+grid_system:
+  # 基础设置
+  exchange: "backpack"                    # 交易所
+  symbol: "BTC_USDC_PERP"                # 交易对
+  
+  # 网格类型
+  grid_type: "short"                     # long=做多网格, short=做空网格
+  
+  # 价格区间设置（做空网格：从低到高）
+  price_range:
+    lower_price: 80000.00                # 价格下限
+    upper_price: 100000.00               # 价格上限
+  
+  grid_interval: 100.00                  # 网格间隔（等差）
+  
+  # 订单设置
+  order_amount: 0.025                    # 每格订单数量（BTC）
+  
+  # 可选设置
+  max_position: 2.0                      # 最大持仓限制（可选）
+  enable_notifications: true             # 是否启用通知
+  fee_rate: 0.0001                       # 手续费率（默认0.0001=万分之1）
+  
+  # 订单健康检查
+  order_health_check_interval: 600       # 订单健康检查间隔（秒，默认600=10分钟）
+  
+  # 说明：
+  # 1. 网格数量自动计算：(100000 - 80000) / 100 = 200个网格
+  # 2. 第一个订单价格：80100（下限 + 1格）
+  # 3. 每个网格预期利润：100 * 0.025 = 2.5 USDC
+  # 4. 震荡100次收益：250 USDC（减去手续费）
+

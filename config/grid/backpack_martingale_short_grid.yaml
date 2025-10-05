@@ -1,0 +1,42 @@
+# Backpack BTC 马丁做空网格配置示例
+
+grid_system:
+  # 基础设置
+  exchange: "backpack"                    # 交易所
+  symbol: "BTC_USDC_PERP"                # 交易对
+  
+  # 网格类型
+  grid_type: "martingale_short"          # martingale_short=马丁做空网格
+  
+  # 价格区间设置（做空网格：从低到高）
+  price_range:
+    upper_price: 123500.00               # 价格上限
+    lower_price: 103600.00               # 价格下限
+  
+  grid_interval: 100.00                  # 网格间隔（等差）
+  
+  # 订单设置
+  order_amount: 0.001                    # 基础订单数量（BTC）
+  
+  # 马丁网格设置
+  martingale_increment: 0.001            # 每格递增金额（BTC）
+  
+  # 可选设置
+  max_position: 20.0                     # 最大持仓限制（可选）
+  enable_notifications: true             # 是否启用通知
+  fee_rate: 0.0001                       # 手续费率（默认0.0001=万分之1）
+  
+  # 订单健康检查
+  order_health_check_interval: 600       # 订单健康检查间隔（秒，默认600=10分钟）
+  
+  # 说明：
+  # 1. 网格数量自动计算：(123500 - 103600) / 100 = 199个网格
+  # 2. 马丁网格订单金额递增：
+  #    Grid 1  (103700): 0.001 BTC  ← 最低价格，最小金额
+  #    Grid 2  (103800): 0.002 BTC
+  #    Grid 3  (103900): 0.003 BTC
+  #    ...
+  #    Grid 199 (123400): 0.199 BTC  ← 最高价格，最大金额
+  # 3. 反向订单金额 = 成交订单的实际金额
+  # 4. 风险提示：马丁网格在价格持续上涨时会大幅增加持仓，请谨慎设置！
+  # 5. 建议设置 max_position 限制最大持仓

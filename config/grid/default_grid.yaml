@@ -1,0 +1,53 @@
+# 默认网格配置模板
+
+grid_system:
+  # 基础设置
+  exchange: "backpack"                    # 交易所：backpack, binance, okx
+  symbol: "BTC_USDC_PERP"                # 交易对
+  
+  # 网格类型
+  grid_type: "long"                      # long=做多网格, short=做空网格
+  
+  # 价格区间设置
+  price_range:
+    upper_price: 100000.00               # 价格上限
+    lower_price: 80000.00                # 价格下限
+  
+  grid_interval: 300.00                  # 网格间隔（等差）
+  
+  # 订单设置
+  order_amount: 0.01                     # 每格订单数量
+  
+  # 可选设置
+  max_position: null                     # 最大持仓限制（null=无限制）
+  enable_notifications: false            # 是否启用通知
+  fee_rate: 0.0001                       # 手续费率（默认0.0001=万分之1）
+  
+  # 订单健康检查
+  order_health_check_interval: 600       # 订单健康检查间隔（秒，默认600=10分钟）
+  
+# 交易所连接设置
+exchange_config:
+  # API密钥从环境变量或交易所配置文件读取
+  # 请在 config/exchanges/backpack_config.yaml 中配置API密钥
+  # 或设置环境变量：
+  #   export BACKPACK_API_KEY="your_api_key"
+  #   export BACKPACK_API_SECRET="your_api_secret"
+  
+  # 连接参数
+  timeout: 30                            # 请求超时（秒）
+  enable_rate_limit: true                # 启用限频
+  
+# 日志设置
+logging:
+  level: "INFO"                          # DEBUG, INFO, WARNING, ERROR
+  file: "logs/grid_trading/grid_system.log"
+  max_size: "100MB"
+  backup_count: 10
+  
+# 终端界面设置
+terminal:
+  refresh_rate: 4                        # 刷新频率（次/秒）
+  history_limit: 10                      # 显示历史订单数量
+  enable_colors: true                    # 启用彩色输出
+
